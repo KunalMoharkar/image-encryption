@@ -1,4 +1,5 @@
 import random
+import numpy as np
 #generate a random hexadec key with input bits size
 def generate_hex_key(size):
 
@@ -29,4 +30,32 @@ def generate_random_permutation(dimension):
     return permutation
 
 
+def generate_random_non_singular_matrix(dimension):
+
+    #matrix of size (l+5)*(l+5)
+    n = dimension + 5
+
+    matrix = []
+
+    inv_matrix = []
+
+    while True:
+
+        matrix = np.random.randint(7, size=(n, n))
+
+        rank = np.linalg.matrix_rank(matrix)
+
+        if rank == n:
+
+            #print(matrix)
+
+            #print(f"Rank of matrix {rank}")
+
+            break
+    
+    inv_matrix = np.linalg.inv(matrix)
+
+    #print(inv_matrix)
+
+    return matrix, inv_matrix
 
