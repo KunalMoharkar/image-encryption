@@ -41,7 +41,8 @@ def generate_random_non_singular_matrix(dimension):
 
     while True:
 
-        matrix = np.random.randint(7, size=(n, n))
+        #random ints from 0 to n-1.
+        matrix = np.random.randint(n, size=(n, n))
 
         rank = np.linalg.matrix_rank(matrix)
 
@@ -57,5 +58,5 @@ def generate_random_non_singular_matrix(dimension):
 
     #print(inv_matrix)
 
-    return matrix, inv_matrix
+    return np.array(matrix, dtype='float'), np.array(inv_matrix, dtype='float')
 

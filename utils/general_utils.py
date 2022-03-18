@@ -1,3 +1,4 @@
+import decimal
 import numpy as np
 
 #accepts list of matrices as input and returns the result
@@ -9,7 +10,8 @@ def multiply_matrices(matrices):
     for matrix in matrices:
         result = np.matmul(result, matrix)
 
-    return result
+    #round off to 5 decimal values
+    return result.round(decimals = 5)
 
 def permute_feature_vector(feature_vector, permutation):
 

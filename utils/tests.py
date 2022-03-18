@@ -1,6 +1,7 @@
 from general_utils import multiply_matrices, permute_feature_vector, create_diagonal_matrix, generate_lower_triangular_matrix
 import numpy as np
 
+
 def test_multiply_matrices():
 
     M1 = [[1, 0, 1, 2, 3, 1, 0],
